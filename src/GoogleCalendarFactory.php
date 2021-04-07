@@ -13,6 +13,8 @@ class GoogleCalendarFactory
         $config = config('google-calendar');
 
         $client = self::createAuthenticatedGoogleClient($config);
+        
+        $client->setSubject($calendarId);
 
         $service = new Google_Service_Calendar($client);
 
