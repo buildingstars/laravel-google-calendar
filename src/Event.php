@@ -234,6 +234,11 @@ class Event
     {
         return $this->calendarId;
     }
+    
+    public function setCalendarId($id): void
+    {
+        $this->calendarId = $id;
+    }
 
     protected static function getGoogleCalendar(string $calendarId = null): GoogleCalendar
     {
