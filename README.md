@@ -6,6 +6,25 @@
 ![Code Style Status](https://img.shields.io/github/workflow/status/spatie/laravel-google-calendar/Check%20&%20fix%20styling?label=code%20style)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-google-calendar.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-google-calendar)
 
+You can manage a domain wide account with the following:
+
+Get events, just pass in the email you want to get:
+
+`Event::get(now()->subDays(7), now(), [], 'mlandgraf@buildingstars.com');`
+
+Set events, use the `setCalendarId` method on the `Event`:
+
+```
+$event = new \Spatie\GoogleCalendar\Event();
+
+$event->name = 'A new event';
+$event->startDateTime = Carbon\Carbon::now();
+$event->endDateTime = Carbon\Carbon::now()->addHour();
+$event->setCalendarId('mlandgraf@buildingstars.com');
+
+$event->save();
+```
+
 This package makes working with a Google Calendar a breeze. Once it has been set up you can do these things:
 
 ```php
