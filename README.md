@@ -10,11 +10,13 @@ You can manage a domain wide account with the following:
 
 Get events, just pass in the email you want to get:
 
-`Event::get(now()->subDays(7), now(), [], 'mlandgraf@buildingstars.com');`
+```php
+Event::get(now()->subDays(7), now(), [], 'mlandgraf@buildingstars.com');
+```
 
 Set events, use the `setCalendarId` method on the `Event`:
 
-```
+```php
 $event = new \Spatie\GoogleCalendar\Event();
 
 $event->name = 'A new event';
